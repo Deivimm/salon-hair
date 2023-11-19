@@ -49,7 +49,7 @@ button {
 	border-radius: 10px;
 	border: 1px solid #dfb7db;
 	background-color: #dfb7db;
-	color: #333;;
+	color: #333;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
@@ -176,4 +176,8 @@ img {
 	font-size: 14px;
 	text-decoration: none;
 	margin: 5px 0;
+}
+
+.link {
+	cursor: pointer;
 }

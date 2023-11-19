@@ -16,29 +16,34 @@ export class LoginFormComponent {
   loginError: string = '';
 
   constructor
-  (
-    private authenticationService: AuthenticationService,
-    private router: Router
+    (
+      private authenticationService: AuthenticationService,
+      private router: Router
     ) { }
 
-    login(): void {
-      this.authenticationService.login(this.email, this.password).subscribe(
-        success => {
-          this.router.navigate(['/home']);
-        },
-        error => {
-          this.loginError = 'Usuário ou senha inválidos';
-        }
-      );
-    }
+  login(): void {
+    this.authenticationService.login(this.email, this.password).subscribe(
+      success => {
+        this.router.navigate(['/home']);
+      },
+      error => {
+        this.loginError = 'Usuário ou senha inválidos';
+      }
+    );
+  }
+
+  navigateToRegister(): void {
+    this.router.navigate(['/register']);
+  }
+
 }
 @NgModule({
   imports: [
     CommonModule,
-      FormsModule
+    FormsModule,
   ],
   declarations: [
-      LoginFormComponent
+    LoginFormComponent
   ]
 })
 export class LoginFormModule { }
