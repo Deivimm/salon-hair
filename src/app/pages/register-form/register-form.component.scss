@@ -22,7 +22,7 @@ body {
     background-color: #fff;
     border-radius: 15px;
     width: 960px;
-    height: 60%;
+    height: 70%;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -148,11 +148,28 @@ body {
     width: 100%;
     border: none;
     background-color: #ecf0f1;
+    color: #333;
+}
+.validator-erros {
+    color: #ff2f2f;
+    font-size: 10px;
+    margin-left: 10px;
 }
 
-input::placeholder {
-    padding-left: 15px;
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
+
+.input {
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
 
 /*VERSÃO MOBILE*/
 @media screen and (max-width: 1040px) {
