@@ -3,12 +3,12 @@
         <div class="form-container sign-in-container">
             <form (submit)="login()">
                 <h1>Entrar</h1>
-                <input type="email" [(ngModel)]="email" name="email" placeholder="E-mail" />
-                <input type="password" [(ngModel)]="password" name="password" placeholder="Senha" />
+                <input type="email" [(ngModel)]="email" name="email" placeholder="E-mail"/>
+                <input type="password" [(ngModel)]="password" name="password" placeholder="Senha"/>
                 <div *ngIf="loginError" class="text">{{ loginError }}</div>
-                <button type="submit">Entrar</button>
+                <button (click)="login()">Entrar</button>
                 <a href="#">Esqueceu sua senha?</a>
-                <a href="#">Cadastrar</a>
+                <a class="link" (click)="navigateToRegister()">Cadastrar</a>
             </form>
         </div>
         <div class="overlay-container">
