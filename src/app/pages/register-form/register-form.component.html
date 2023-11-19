@@ -6,28 +6,37 @@
       <p class="description description-primary">O seu salão de beleza na palma da sua mão!</p>
     </div>
     <div class="second-column">
-      <form class="form">
-        <label class="label-input" for="">
+      <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+        <label class="label-input input" for="">
           <i class="far fa-user"></i>
-          <input type="text" placeholder="Nome">
+          <input class="input" type="text" placeholder="Nome" formControlName="name">
         </label>
 
-        <label class="label-input" for="">
+        <label class="label-input input" for="">
           <i class="far fa-envelope"></i>
-          <input type="email" placeholder="E-mail">
+          <input class="input" type="email" placeholder="E-mail" formControlName="email">
         </label>
+        <div class="validator-erros" *ngIf="registerForm?.get('email')?.errors?.['email'] && registerForm?.get('email')?.touched">
+          O email inserido não é válido.
+        </div>
 
-        <label class="label-input" for="">
+        <label class="label-input input">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Senha">
+          <input class="input" type="password" placeholder="Senha" formControlName="password">
         </label>
+        <div class="validator-erros" *ngIf="registerForm?.get('password')?.errors?.['passwordInvalid'] && registerForm?.get('password')?.touched">
+          A senha deve ter no mínimo 8 caracteres, um número, uma letra e um caractere especial.
+        </div>
 
-        <label class="label-input" for="">
+        <label class="label-input input">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Repita sua senha">
+          <input class="input" type="password" placeholder="Repita sua senha" formControlName="confirmPassword">
         </label>
+        <div class="validator-erros" *ngIf="registerForm?.errors?.['passwordsNotMatching'] && registerForm?.get('confirmPassword')?.touched">
+          As senhas não são iguais.
+        </div>
 
-        <button class="btn btn-second">Criar</button>
+        <button class="btn btn-second" [disabled]="registerForm.invalid">Criar</button>
       </form>
     </div>
   </div>

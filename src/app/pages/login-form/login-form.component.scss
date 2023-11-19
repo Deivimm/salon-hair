@@ -91,6 +91,10 @@ input {
 	width: 100%;
 }
 
+input:focus {
+    outline: none;
+}
+
 .all{
 	position: absolute;
 	top: 50%;

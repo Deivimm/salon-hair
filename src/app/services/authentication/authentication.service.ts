@@ -16,8 +16,8 @@ export class AuthenticationService {
     return this.http.post<any>(this.loginUrl, { login, password });
   }
 
-  register(login: string, password: string): Observable<any> {
-    return this.http.post<any>(this.registerUrl, { login, password });
+  register(name: String, login: string, password: string): Observable<any> {
+    return this.http.post<any>(this.registerUrl, { name, login, password });
   }
 
 }
