@@ -1,0 +1,152 @@
+body {
+    background: #F9F8FD;
+    font-family: 'Lexend Exa', sans-serif;
+}
+
+nav {
+    background-color: #eccbd8;
+    display: inline-block;
+    animation: slide-in 1s ease-out;
+    width: 100%;
+}
+
+.navbar-icon {
+    position: absolute;
+    margin-left: 15px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    height: 45px;
+  }
+
+.navbar-icon-menu {
+    position: absolute;
+    margin-right: 15px;
+    right: 0;
+    top: 3px;
+    bottom: 0;
+    width: 26px;
+    height: 39px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    right: 0 !important;
+    top: 105% !important;
+    min-width: 120px !important;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2) !important;
+    z-index: 1 !important;
+}
+
+.dropdown-menu li {
+    cursor: pointer;
+    width: 100% !important;
+    border-radius: 10px !important;
+}
+
+.fix {
+    &:hover {
+        background: #ff2f7f !important;
+        color: #ffffff !important;
+
+        a {
+            color: #ffffff !important;
+        }
+    }
+}
+
+ul {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0 30px;
+    list-style-type: none;
+
+    li:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    li {
+        border: 2px solid transparent;
+        border-radius: 5px;
+        padding: 10px;
+        transition: background 0.2s;
+
+        a {
+            color: #ff2f7f;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        ul {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            display: block;
+            margin: 12px -12px;
+            padding: 0;
+            background: #ffffff;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            transition: opacity 0.2s, visibility 0.2s;
+
+            li {
+                color: #ff2f7f;
+                margin: -2px 0 0 -2px;
+                width: calc(100% - 20px);
+                line-height: 1.7;
+
+                a {
+                    color: #ff2f7f;
+                }
+            }
+        }
+
+        &:hover {
+            background: #ff2f7f;
+            color: #ffffff;
+
+            a {
+                color: #ffffff ;
+            }
+
+            ul {
+                visibility: visible;
+                opacity: 1;
+                box-shadow: 0px 3px 5px 2px #EBECF1;
+
+                li {
+                    a {
+                        color:  #ff2f7f;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        top: -50px;
+    }
+
+    40% {
+        top: 20px;
+    }
+
+    70% {
+        top: 10px;
+    }
+
+    100% {
+        top: 15px;
+    }
+}
