@@ -28,7 +28,8 @@ Clone o repositório do GitHub.
 Navegue até a pasta do projeto.
 Execute o comando `npm install` para instalar as dependências.
 Execute o comando `ng serve` para iniciar o servidor de desenvolvimento.
-Uso
+
+## Uso
 
 Para usar o projeto, abra o navegador e acesse o endereço `http://localhost:4200`.
 
