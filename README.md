@@ -1,27 +1,41 @@
-# SalonHair
+## Descrição
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+Este projeto é um sistema de gerenciamento de salão de beleza desenvolvido em Angular. Ele é integrado com uma API e banco de dados para armazenar as informações do salão.
 
-## Development server
+## Objetivos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O objetivo deste projeto é fornecer uma ferramenta para gerenciar as operações de um salão de beleza. Segue algumas das tarefas que os usuários poderão realizar:
 
-## Code scaffolding
+Cadastrar clientes
+* Agendar serviços
+* Registrar pagamentos
+* Gerenciar estoque
+* Gerar relatórios
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologias
 
-## Build
+O projeto foi desenvolvido usando as seguintes tecnologias:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Angular
+* Node.js
 
-## Running unit tests
+## Instalação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para instalar o projeto, siga as seguintes etapas:
 
-## Running end-to-end tests
+Instale o Node.js e o npm.
+Clone o repositório do GitHub.
+Navegue até a pasta do projeto.
+Execute o comando `npm install` para instalar as dependências.
+Execute o comando `ng serve` para iniciar o servidor de desenvolvimento.
+Uso
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Para usar o projeto, abra o navegador e acesse o endereço `http://localhost:4200`.
 
-## Further help
+## Créditos
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page..
+Este projeto foi desenvolvido como parte de uma avaliação da faculdade.
+
+## Outras informações
+
+O projeto está em desenvolvimento e novas funcionalidades estão sendo adicionadas regularmente.
