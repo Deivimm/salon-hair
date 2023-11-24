@@ -15,6 +15,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 export class RegisterClientComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
   registerError: string = '';
+  isSubmitting = false;
 
   constructor(
     public dialogRef: MatDialogRef<RegisterClientComponent>,
@@ -41,6 +42,9 @@ export class RegisterClientComponent implements OnInit {
   }
 
   register(): void {
+
+    this.isSubmitting = true;
+
     if (this.registerForm && this.registerForm.valid) {
       const client: Client = {
         cpf: this.registerForm.value.cpf,
@@ -61,11 +65,13 @@ export class RegisterClientComponent implements OnInit {
       this.authenticationService.registerClient(client).subscribe(
         success => {
           this.registerForm.reset();
+          this.isSubmitting = false;
           this.snackBar.open('Cliente cadastrado com sucesso!', 'Fechar', {
             duration: 5000,
           });
         },
         error => {
+          this.isSubmitting = false;
           this.snackBar.open('Houve um erro ao cadastrar o cliente', 'Fechar', {
             duration: 2000,
           });

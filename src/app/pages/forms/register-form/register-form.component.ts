@@ -66,6 +66,7 @@ export class RegisterFormComponent implements OnInit {
 
       this.authenticationService.register(user).subscribe(
         success => {
+          this.registerForm.reset();
           this.userService.setUserName(this.registerForm.value.name);
           this.snackBar.open('Cadastrado realizado com sucesso!', 'Fechar', {
             duration: 5000,
