@@ -47,8 +47,8 @@ a {
 
 button {
 	border-radius: 10px;
-	border: 1px solid #dfb7db;
-	background-color: #dfb7db;
+	border: 1px solid #ffa9b7;
+	background-color: #ffa9b7;
 	color: #333;
 	font-size: 12px;
 	font-weight: bold;
@@ -109,7 +109,7 @@ input:focus {
 	overflow: hidden;
 	width: 960px;
 	max-width: 100%;
-	min-height: 438px;
+	min-height: 658px;
 }
 
 .form-container {
@@ -175,12 +175,9 @@ img {
 }
 
 .text {
-	color: #333;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #ff0000;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 5px 0;
-}
-
-.link {
-	cursor: pointer;
 }

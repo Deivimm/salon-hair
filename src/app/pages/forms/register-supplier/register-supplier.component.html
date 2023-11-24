@@ -1,0 +1,127 @@
+<div class="container mat-dialog-container">
+  <button type="button" class="close" aria-label="Close" (click)="closeDialog()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="content first-content">
+    <div class="first-column">
+      <h2 class="title title-primary">Cadastrar Fornecedor</h2>
+      <p class="description description-primary">Salon Hair System</p>
+      <p class="description description-primary">O seu salão de beleza na palma da sua mão!</p>
+    </div>
+    <div class="second-column">
+      <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+        <!-- Razão Social -->
+        <label class="label-input input">
+          <i class="far fa-user"></i>
+          <input class="input" type="text" placeholder="Razão Social" formControlName="razaoSocial">
+          <div class="validator-errors"
+            *ngIf="registerForm?.get('razaoSocial')?.errors?.['required'] && registerForm?.get('razaoSocial')?.touched">
+            *Campo obrigatório
+          </div>
+        </label>
+
+        <!-- Nome Fantasia -->
+        <label class="label-input input">
+          <i class="far fa-user"></i>
+          <input class="input" type="text" placeholder="Nome Fantasia" formControlName="nomeFantasia">
+          <div class="validator-errors"
+            *ngIf="registerForm?.get('nomeFantasia')?.errors?.['required'] && registerForm?.get('nomeFantasia')?.touched">
+            *Campo obrigatório
+          </div>
+        </label>
+
+
+        <!-- Endereço -->
+        <label class="label-input input">
+          <i class="fas fa-map-marker-alt"></i>
+          <input class="input" type="text" placeholder="Endereço" formControlName="endereco">
+          <div class="validator-errors"
+            *ngIf="registerForm?.get('endereco')?.errors?.['required'] && registerForm?.get('endereco')?.touched">
+            *Campo obrigatório
+          </div>
+        </label>
+
+
+        <!-- Cidade e CEP -->
+        <div class="form-row">
+          <label class="label-input input">
+            <i class="fas fa-city"></i>
+            <input class="input" type="text" placeholder="Cidade" formControlName="cidade">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('cidade')?.errors?.['required'] && registerForm?.get('cidade')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+
+
+          <label class="label-input input">
+            <i class="fas fa-map-marker-alt"></i>
+            <input class="input" type="text" placeholder="CEP" formControlName="cep">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('cep')?.errors?.['required'] && registerForm?.get('cep')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+
+        </div>
+
+        <!-- CNPJ e UF -->
+        <div class="form-row">
+          <label class="label-input input">
+            <i class="fas fa-id-card"></i>
+            <input class="input" type="text" placeholder="CNPJ" formControlName="cnpj">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('cnpj')?.errors?.['required'] && registerForm?.get('cnpj')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+
+          <label class="label-input input">
+            <i class="fas fa-id-card"></i>
+            <input class="input" type="text" placeholder="UF" formControlName="uf">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('uf')?.errors?.['required'] && registerForm?.get('uf')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+        </div>
+
+        <!-- Celular e Telefone -->
+        <div class="form-row">
+          <label class="label-input input">
+            <i class="fas fa-mobile-alt"></i>
+            <input class="input" type="tel" placeholder="Telefone" formControlName="fone">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('fone')?.errors?.['required'] && registerForm?.get('fone')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+
+          <label class="label-input input">
+            <i class="fas fa-mobile-alt"></i>
+            <input class="input" type="tel" placeholder="Celular" formControlName="celular">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('celular')?.errors?.['required'] && registerForm?.get('celular')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+        </div>
+
+
+
+        <!-- E=mail -->
+        <label class="label-input input">
+          <i class="far fa-envelope"></i>
+          <input class="input" type="email" placeholder="E-mail" formControlName="email">
+          <div class="validator-errors"
+            *ngIf="registerForm?.get('email')?.errors?.['required'] && registerForm?.get('email')?.touched">
+            *Campo obrigatório
+          </div>
+        </label>
+
+
+        <button class="btn btn-second" [disabled]="registerForm.invalid" (click)="register()">Criar</button>
+      </form>
+    </div>
+  </div>
+</div>

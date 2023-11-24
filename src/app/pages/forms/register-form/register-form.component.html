@@ -1,7 +1,10 @@
-<div class="container">
+<div class="container mat-dialog-container">
+  <button type="button" class="close" aria-label="Close" (click)="closeDialog()">
+    <span aria-hidden="true">&times;</span>
+  </button>
   <div class="content first-content">
     <div class="first-column">
-      <h2 class="title title-primary">Criar conta</h2>
+      <h2 class="title title-primary">{{ title }}</h2>
       <p class="description description-primary">Salon Hair System</p>
       <p class="description description-primary">O seu salão de beleza na palma da sua mão!</p>
     </div>
@@ -16,7 +19,7 @@
           <i class="far fa-envelope"></i>
           <input class="input" type="email" placeholder="E-mail" formControlName="email">
         </label>
-        <div class="validator-erros" *ngIf="registerForm?.get('email')?.errors?.['email'] && registerForm?.get('email')?.touched">
+        <div class="validator-errors" *ngIf="registerForm?.get('email')?.errors?.['email'] && registerForm?.get('email')?.touched">
           O email inserido não é válido.
         </div>
 
@@ -24,7 +27,7 @@
           <i class="fas fa-lock"></i>
           <input class="input" type="password" placeholder="Senha" formControlName="password">
         </label>
-        <div class="validator-erros" *ngIf="registerForm?.get('password')?.errors?.['passwordInvalid'] && registerForm?.get('password')?.touched">
+        <div class="validator-errors" *ngIf="registerForm?.get('password')?.errors?.['passwordInvalid'] && registerForm?.get('password')?.touched">
           A senha deve ter no mínimo 8 caracteres, um número, uma letra e um caractere especial.
         </div>
 
@@ -32,7 +35,7 @@
           <i class="fas fa-lock"></i>
           <input class="input" type="password" placeholder="Repita sua senha" formControlName="confirmPassword">
         </label>
-        <div class="validator-erros" *ngIf="registerForm?.errors?.['passwordsNotMatching'] && registerForm?.get('confirmPassword')?.touched">
+        <div class="validator-errors" *ngIf="registerForm?.errors?.['passwordsNotMatching'] && registerForm?.get('confirmPassword')?.touched">
           As senhas não são iguais.
         </div>
 
