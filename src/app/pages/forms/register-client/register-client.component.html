@@ -1,0 +1,149 @@
+<div class="container mat-dialog-container">
+  <button type="button" class="close" aria-label="Close" (click)="closeDialog()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="content first-content">
+    <div class="first-column">
+      <h2 class="title title-primary">Cadastrar Cliente</h2>
+      <p class="description description-primary">Salon Hair System</p>
+      <p class="description description-primary">O seu salão de beleza na palma da sua mão!</p>
+    </div>
+    <div class="second-column">
+      <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+        <!-- Nome -->
+        <label class="label-input input">
+          <i class="far fa-user"></i>
+          <input class="input" type="text" placeholder="Nome" formControlName="name">
+          <div class="validator-errors"
+            *ngIf="registerForm?.get('name')?.errors?.['required'] && registerForm?.get('name')?.touched">
+            *Campo obrigatório
+          </div>
+        </label>
+
+        <!-- Sobrenome -->
+        <label class="label-input input">
+          <i class="far fa-user"></i>
+          <input class="input" type="text" placeholder="Sobrenome" formControlName="secondName">
+          <div class="validator-errors"
+            *ngIf="registerForm?.get('secondName')?.errors?.['required'] && registerForm?.get('secondName')?.touched">
+            *Campo obrigatório
+          </div>
+        </label>
+
+
+        <!-- Endereço -->
+        <label class="label-input input">
+          <i class="fas fa-map-marker-alt"></i>
+          <input class="input" type="text" placeholder="Endereço" formControlName="endereco">
+          <div class="validator-errors"
+            *ngIf="registerForm?.get('endereco')?.errors?.['required'] && registerForm?.get('endereco')?.touched">
+            *Campo obrigatório
+          </div>
+        </label>
+
+
+        <!-- Cidade e CEP -->
+        <div class="form-row">
+          <label class="label-input input">
+            <i class="fas fa-city"></i>
+            <input class="input" type="text" placeholder="Cidade" formControlName="cidade">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('cidade')?.errors?.['required'] && registerForm?.get('cidade')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+
+
+          <label class="label-input input">
+            <i class="fas fa-map-marker-alt"></i>
+            <input class="input" type="text" placeholder="CEP" formControlName="cep">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('cep')?.errors?.['required'] && registerForm?.get('cep')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+
+        </div>
+
+        <!-- CPF e RG -->
+        <div class="form-row">
+          <label class="label-input input">
+            <i class="fas fa-id-card"></i>
+            <input class="input" type="text" placeholder="CPF" formControlName="cpf">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('cpf')?.errors?.['required'] && registerForm?.get('cpf')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+
+
+          <label class="label-input input">
+            <i class="fas fa-id-card"></i>
+            <input class="input" type="text" placeholder="RG" formControlName="rg">
+          </label>
+        </div>
+
+        <!-- UF e Data de Nascimento -->
+        <div class="form-row">
+          <label class="label-input input">
+            <i class="fas fa-id-card"></i>
+            <input class="input" type="text" placeholder="UF" formControlName="uf">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('uf')?.errors?.['required'] && registerForm?.get('uf')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+
+          <label class="label-input input">
+            <i class="far fa-calendar-alt"></i>
+            <input class="input" type="date" placeholder="Data de Nascimento" formControlName="dateNasc">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('dateNasc')?.errors?.['required'] && registerForm?.get('dateNasc')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+        </div>
+
+         <!-- Telefone fixo -->
+        <label class="label-input input">
+          <i class="far fa-envelope"></i>
+          <input class="input" type="tel" placeholder="Telefone" formControlName="fone">
+        </label>
+
+        <!-- Celular 1 e 2 -->
+        <div class="form-row">
+
+          <label class="label-input input">
+            <i class="fas fa-mobile-alt"></i>
+            <input class="input" type="tel" placeholder="Celular 1" formControlName="celular1">
+            <div class="validator-errors"
+              *ngIf="registerForm?.get('celular1')?.errors?.['required'] && registerForm?.get('celular1')?.touched">
+              *Campo obrigatório
+            </div>
+          </label>
+
+
+          <label class="label-input input">
+            <i class="fas fa-mobile-alt"></i>
+            <input class="input" type="tel" placeholder="Celular 2" formControlName="celular2">
+          </label>
+        </div>
+
+
+
+        <!-- E=mail -->
+        <label class="label-input input">
+          <i class="far fa-envelope"></i>
+          <input class="input" type="email" placeholder="E-mail" formControlName="email">
+          <div class="validator-errors"
+            *ngIf="registerForm?.get('email')?.errors?.['required'] && registerForm?.get('email')?.touched">
+            *Campo obrigatório
+          </div>
+        </label>
+
+
+        <button class="btn btn-second" [disabled]="registerForm.invalid" (click)="register()">Criar</button>
+      </form>
+    </div>
+  </div>
+</div>

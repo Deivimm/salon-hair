@@ -4,17 +4,25 @@ body {
 }
 
 nav {
-    background-color: #eccbd8;
+    background-color: #ffa9b7;
     display: inline-block;
     animation: slide-in 1s ease-out;
     width: 100%;
+}
+
+.navbar-title {
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 55px;
+    color:#ffffff;
+    text-shadow: 2px 2px 2px rgba(31, 31, 31, 0.2);
 }
 
 .navbar-icon {
     position: absolute;
     margin-left: 15px;
     left: 0;
-    top: 0;
+    top: -15px;
     bottom: 0;
     width: 32px;
     height: 45px;
@@ -32,6 +40,7 @@ nav {
 }
 
 .dropdown-menu {
+    background-color: #ffffff;
     position: absolute !important;
     border-radius: 10px !important;
     display: flex !important;
@@ -45,7 +54,7 @@ nav {
 
 .dropdown-menu li {
     cursor: pointer;
-    width: 100% !important;
+    width: 85% !important;
     border-radius: 10px !important;
 }
 
@@ -80,7 +89,7 @@ ul {
         transition: background 0.2s;
 
         a {
-            color: #ff2f7f;
+            color: #646464;
             text-decoration: none;
             text-transform: uppercase;
             transition: color 0.2s;
@@ -125,7 +134,7 @@ ul {
 
                 li {
                     a {
-                        color:  #ff2f7f;
+                        color:  #646464;
                     }
                 }
             }

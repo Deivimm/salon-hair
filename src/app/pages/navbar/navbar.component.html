@@ -1,5 +1,6 @@
 <nav>
     <img class="navbar-icon" src="/assets/systemicon.png" alt="Salon Hair System">
+    <h2 class="navbar-title">Salon Hair System</h2>
     <ul>
         <li><a href="#0">Home</a></li>
         <li><a href="#0">Agenda</a></li>
@@ -7,10 +8,10 @@
         <li>
             <a href="#0">Cadastro</a>
             <ul>
-                <li class="fix" ><a href="#0">Cleinte</a></li>
-                <li class="fix" ><a href="#0">Fornecedor</a></li>
+                <li class="fix" ><a class="link" (click)="openDialogRegisterClient()">Cleinte</a></li>
+                <li class="fix" ><a class="link"(click)="openDialogRegisterSupplier()">Fornecedor</a></li>
                 <li class="fix" ><a href="#0">Produto</a></li>
-                <li class="fix" ><a href="#0">Usuário</a></li>
+                <li class="fix" ><a class="link" (click)="openDialogRegisterUser()">Usuário</a></li>
             </ul>
         </li>
         <li><a href="#0">Relatórios</a></li>
@@ -20,7 +21,7 @@
         <div class="dropdown-menu" *ngIf="showMenu">
           <li><a href="#0">Perfil</a></li>
           <li><a href="#0">Configurações</a></li>
-          <li><a href="#0">Sair</a></li>
+          <li><a class="link" (click)="logout()">Sair</a></li>
         </div>
 
     </ul>
