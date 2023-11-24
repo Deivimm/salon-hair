@@ -39,6 +39,9 @@ export class RegisterSupplierComponent implements OnInit {
 
 
   register(): void {
+
+    this.isSubmitting = true;
+
     if (this.registerForm && this.registerForm.valid) {
       const supplier: Supplier = {
         cnpj: this.registerForm.value.cnpj,
@@ -54,12 +57,14 @@ export class RegisterSupplierComponent implements OnInit {
       };
       this.authenticationService.registerSupplier(supplier).subscribe(
         success => {
+          this.isSubmitting = false;
           this.registerForm.reset();
           this.snackBar.open('Fornecedor cadastrado com sucesso!', 'Fechar', {
             duration: 5000,
           });
         },
         error => {
+          this.isSubmitting = false;
           this.snackBar.open('Houve um erro ao cadastrar o fornecedor', 'Fechar', {
             duration: 2000,
           });

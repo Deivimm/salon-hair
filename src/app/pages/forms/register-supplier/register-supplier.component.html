@@ -120,7 +120,7 @@
         </label>
 
 
-        <button class="btn btn-second" [disabled]="registerForm.invalid" (click)="register()">Criar</button>
+        <button class="btn btn-second" [disabled]="registerForm.invalid || isSubmitting" (click)="register()">Criar</button>
       </form>
     </div>
   </div>
